@@ -99,3 +99,11 @@ ENV/
 
 # mypy
 .mypy_cache/
+
+# node_modules
+node_modules
+
+# built bundle
+src/server/public/javascripts/
+src/server/public/stylesheets/
+.cache/
