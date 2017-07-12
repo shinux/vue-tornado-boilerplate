@@ -104,6 +104,6 @@ ENV/
 node_modules
 
 # built bundle
-src/server/public/javascripts/
+src/server/public/javascripts/bundle.js
 src/server/public/stylesheets/
 .cache/

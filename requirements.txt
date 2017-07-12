@@ -1,0 +1,5 @@
+pyjade==4.0.0
+six==1.10.0
+tornado==4.5.1
+wheel==0.26.0
+pipenv

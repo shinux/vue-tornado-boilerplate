@@ -25,21 +25,26 @@
     "vue-router": "^2.7.0",
     "vue-style-loader": "^3.0.1",
     "vue-template-compiler": "^2.3.4",
-    "webpack": "^3.0.0"
+    "webpack": "^3.0.0",
+    "concurrently": "^3.5.0",
+    "webpack-dev-server": "^2.5.1"
   },
-  "devDependencies": {},
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "build": "webpack -p"
+    "build": "webpack -p",
+    "server": "python src/server/run.py",
+    "dev-server": "python src/server/run.py dev",
+    "dev-front": "webpack-dev-server -d --hot --config webpack.config.js",
+    "dev": "concurrently --kill-others \"npm run dev-front\" \"npm run dev-server\""
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/shinux/vue-tornado-dev-boilerplate.git"
+    "url": "git+https://github.com/shinux/vue-tornado-boilerplate.git"
   },
   "author": "shinux",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/shinux/vue-tornado-dev-boilerplate/issues"
+    "url": "https://github.com/shinux/vue-tornado-boilerplate/issues"
   },
-  "homepage": "https://github.com/shinux/vue-tornado-dev-boilerplate#readme"
+  "homepage": "https://github.com/shinux/vue-tornado-boilerplate#readme"
 }

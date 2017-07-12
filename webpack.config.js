@@ -44,44 +44,11 @@ module.exports = {
       },
     ],
   },
-  //resolveLoader: {
-  //  root: path.join(__dirname, 'node_modules')
-  //},
 
-  //module: {
-  //  preLoaders: [
-  //    {
-  //      test: /\.vue$/,
-  //      loader: 'eslint',
-  //      exclude: /node_modules/
-  //    },
-  //    {
-  //      test: /\.js$/,
-  //      loader: 'eslint',
-  //      exclude: /node_modules/
-  //    }
-  //  ],
-  //  loaders: [
-  //    {
-  //      test: /\.js$/,
-  //      loader: 'babel',
-  //      exclude: /node_modules/,
-  //      query: { presets: ['es2015'] }
-  //    },
-  //    {
-  //      test: /\.vue$/,
-  //      loader: 'vue'
-  //    },
-  //    {
-  //      test: /\.json$/,
-  //      loader: 'json'
-  //    },
-  //  ],
-  //},
-  //eslint: {
-  //  formatter: require('eslint-friendly-formatter')
-  //},
-  //plugins: [
-  //  new webpack.HotModuleReplacementPlugin()
-  //],
+  devServer: {
+    historyApiFallback: true,
+    inline: true,
+    port: 8008,
+  },
+  devtool: 'eval-source-map',
 }
