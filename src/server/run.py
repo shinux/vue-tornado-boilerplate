@@ -17,13 +17,18 @@ class MainHandler(tornado.web.RequestHandler):
     def get(self):
         self.render('index.html', bundle_path=self.bundle_path)
 
+class HelloHandler(tornado.web.RequestHandler):
+    def get(self):
+        self.write({ 'hello': 'really?' })
+
 def make_app(bundle_path, debug):
     return tornado.web.Application(
        template_path=os.path.join(os.path.dirname(__file__), "views"),
        static_path=os.path.join(os.path.dirname(__file__), "public"),
        debug=debug,
        handlers=[
-           (r"/", MainHandler, dict(bundle_path=bundle_path))
+           (r"/", MainHandler, dict(bundle_path=bundle_path)),
+           (r".*/api/hello", HelloHandler)
            ],
        )
 

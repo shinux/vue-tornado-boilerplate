@@ -5,6 +5,8 @@
 </template>
 
 <script>
+import request from 'superagent-bluebird-promise'
+
 export default {
   data () {
     return {
@@ -14,6 +16,24 @@ export default {
       // its initial state.
       msg: 'Hello World!'
     }
+  },
+
+  methods: {
+    fetchData() {
+      request
+        .get('/api/hello')
+        .then((res) => {
+          console.log(res.body)
+          this.msg = res.body.hello
+        })
+        .catch((err) => {
+          console.log(err)
+        })
+    }
+  },
+
+  created() {
+    this.fetchData()
   }
 }
 </script>
